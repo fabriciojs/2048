@@ -1,6 +1,9 @@
 function Grid(size) {
   this.size = size;
 
+  console.log("this.size");
+  console.log(this.size);
+
   this.cells = [];
 
   this.build();
@@ -79,6 +82,11 @@ Grid.prototype.removeTile = function (tile) {
 };
 
 Grid.prototype.withinBounds = function (position) {
-  return position.x >= 0 && position.x < this.size &&
+  var within = position.x >= 0 && position.x < this.size &&
          position.y >= 0 && position.y < this.size;
+
+  console.log(position);
+  console.log("within ? " + (within ? "yes" : "no"));
+
+  return within;
 };
